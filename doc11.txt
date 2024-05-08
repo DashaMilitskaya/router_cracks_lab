@@ -1,0 +1,29 @@
+https://www.tp-link.com/ru/support/download/tl-wr841nd/v8/#Firmware
+https://www.tp-link.com/en/support/download/tl-wr841nd/v8/#Firmware
+https://www.tp-link.com/uk/support/download/tl-wr841nd/v8/#Firmware
+https://www.tp-link.com/tw/support/download/tl-wr841n/v8/#Firmware
+
+https://www.tp-link.com/ru/support/download/tl-wr841n/v8/#GPL-Code
+
+https://habr.com/ru/articles/383505/	EJTAG: аттракцион для хакеров-2
+https://microsin.net/programming/ARM/openocd-manual-part1.html
+https://www.coderancher.us/2022/05/17/programming-microcontrollers-without-expensive-hardware/
+
+https://www.securitylab.ru/analytics/482900.php	Эксплуатация переполнение буфера на архитектурах MIPS
+https://github.com/KostasEreksonas/tp-link-tl-wr841n-security-analysis
+https://www.youtube.com/watch?v=zjafMP7EgEA	How We Hacked a TP-Link Router and Took Home $55,000 in Pwn2Own
+https://www.programmerall.com/article/40651767021/	TP-LINK TL-WR841N V14 CVE-2019-17147 Buffer Overflow Vulnerability Analysis Note V2018.12.31
+
+https://habr.com/ru/articles/322442/	MIPSfpga и внутрисхемная отладка
+
+https://tech-geek.ru/debug-using-gdb/
+
+https://sh3llc0d3r.com/iot-backdooring-a-firmware/
+
+https://github.com/Deoptim/atheros
+
+https://openwrt.org/docs/guide-user/hardware/debrick.ath79.using.jtag
+
+https://github.com/xpack-dev-tools/openocd-xpack/releases
+
+https://github.com/mikebdp2/wr841n_v9_u-boot

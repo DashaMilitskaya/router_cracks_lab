@@ -1,0 +1,1100 @@
+Content-Type: multipart/related; start=<op.mhtml.1479245865512.ba12f9764556fee7@192.168.100.111>; boundary=----------3CTRaaIaCPnOv7dCmF7lbx
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/mips.html
+Subject: =?utf-8?Q?MIPS=20architecture=20overview?=
+MIME-Version: 1.0
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=mips.html
+Content-Type: text/html; charset=iso-8859-1; name=mips.html
+Content-ID: <op.mhtml.1479245865512.ba12f9764556fee7@192.168.100.111>
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/mips.html
+Content-Transfer-Encoding: 8bit
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html><head><title>MIPS architecture overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="images/favicon.ico" rel="website icon" />
+<link rel="stylesheet" type="text/css" href="hades.css" />
+
+</head>
+<body  bgcolor="FFFFFF">
+<table cellspacing="0" cellpadding="3" border="0"><tr valign="top"><td class="lBanner"><img src="images/hades-130x50-lightgray.gif" alt="Hades logo" /></td
+><td class="sBanner"></td
+><td class="mBanner"><img src="images/hades-mips-overview-banner.gif" alt="Hades applet banner" /></td
+><td class="sBanner"></td
+><td class="rBanner"></td
+></tr
+><tr><td class="lNavbar"></td
+><td class="sNavbar"></td
+><td class="mNavbar"><a href="http://tams-www.informatik.uni-hamburg.de/index.html">TAMS</a
+> / <a href="http://tams-www.informatik.uni-hamburg.de/applets/index.html">Java</a
+> / <a href="http://tams-www.informatik.uni-hamburg.de/applets/hades/webdemos/index.html">Hades</a
+> /  <b>applets:</b> <a href="toc.html">contents</a
+></td
+><td class="sNavbar"></td
+><td class="rNavbar"></td
+></tr
+><tr><td class="lEmpty"></td
+><td class="sEmpty"></td
+><td class="mEmpty"></td
+><td class="sEmpty"></td
+><td class="rEmpty"></td
+></tr
+><tr valign="top" ><td class="lMenu"><p /><a href="../webdemos/index.html">Hades</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/index.html">welcome</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/news.html">news</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/gatelevel.html">gate-level</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/rtlib.html">rtlib</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/cosimulation.html">cosimulation</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/colibri.html">browser</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/styx.html">waveforms</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/jython.html">scripting</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/docs.html">documentation</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/download.html">download</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/webstart.html">webstart</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/gallery.html">gallery</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/links.html">links</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/about.html">about</a><br />
+<p />
+<a href="../webdemos/toc.html">Applets</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/toc.html">contents</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/visual-index.html">visual&nbsp;index</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/usage.html">usage</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/FAQ.html">FAQ</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/feedback.html">feedback</a><br />
+<img src="images/circle-open.png" alt="navi" />&nbsp;<a href="../webdemos/license.html">license</a><br />
+<p />
+</td
+><td class="sText"></td
+><td class="mText" height="200px">
+<p>
+As explained in more detail on the
+<a href="cosimulation.html">cosimulation overview</a> page,
+one of the central research goals of the Hades framework
+was to study algorithms for system-simulation and fast
+hardware/software-cosimulation, including the coupling
+of an event-driven simulation engine with instruction-level
+processor simulators.
+<p>
+
+
+We choose the MIPS-I architecture as the demonstrator for
+cosimulation and the fast simulator coupling in Hades.
+The first reason for this decision is the architecture itself,
+with its simple and regular instruction set,
+straightforward memory-model, 
+clean exception and interrupt handling.
+Secondly, 
+the market for 32-bit embedded systems and system-on-a-chip designs
+is still dominated by microcontrollers based on the MIPS 
+and ARM architectures.
+Thirdly, documentation and tools for the MIPS architecture
+are readily available. For example,
+the DLX processor used in the textbook(s)
+by J.L.Hennessy and D.Patterson is closed based on the MIPS concepts.
+<p>
+
+
+The remainder of this document first gives a broad overview of the
+MIPS architecture, including instruction-set, memory-model,
+and interrupts.
+The following section then describes the relevant details,
+user-interface, and configuration settings of the TinyMips 
+microprocessor.
+While TinyMips faithfully implements the full MIPS-I instruction-set
+and memory-model, it does use a simplified execution model without
+instruction pipeline.
+Finally, we present an overview of the GNU toolchain and explain
+how to setup your own cross-compiler and the binutils assembler
+and helper tools.
+Using the gcc cross-compiler allows you to write programs and
+compile programs for the TinyMips processor on your own computer.
+reference when studying the applets on the Hades website.
+<p>
+
+You might want to print a copy of this page and keep it around
+as reference while studying the interactive applets based on
+the TinyMips and IDT&nbsp;R3051 microprocessors.
+<p>
+
+
+
+
+
+<h4>MIPS architecture overview</h4>
+
+
+The MIPS architecture evolved from research on efficient processor
+organization and VLSI integration at Stanford University.
+Their prototype chip proved that a microprocessor 
+with <i>five-stage execution pipeline</i>
+and <i>cache controller</i> could be integrated onto a single silicon chip,
+greatly improving performance over non-pipelined designs.
+At the same time, a research group at Berkeley designed the RISC-I chip
+based on pretty much the same ideas.
+Today, the acronym RISC is interpreted as "regular instruction set computer",
+and the RISC ideas are used in every current microprocessor design.
+<p>
+
+The key concepts of the original MIPS architecture are:
+<ul>
+ <li>five-stage execution pipeline: 
+     fetch, decode, execute, memory-access, write-result
+     <p>
+ <li>regular instruction set, all instructions are 32-bit 
+ <li>three-operand arithmetical and logical instructions
+ <li>32 general-purpose registers of 32-bits each
+ <li>no status register or instruction side-effects
+ <li>no complex instructions (like stack management, string operations, etc.)
+ <li>optional coprocessors for system management and floating-point
+     <p>
+ <li>only the load and store instruction access memory
+ <li>flat address space of 4&nbsp; GBytes of main memory (2^32 bytes)
+ <li>memory-management unit (MMU) maps virtual to actual physical addresses
+     <p>
+ <li>optimizing C compiler replaces hand-written assembly code
+ <li>hardware structure does not check dependecies - not "foolproof"
+ <li>but software toolchain knows about hardware and generates correct code
+</ul>
+<p>
+
+
+
+In 1984, MIPS corporation was founded by members of the Stanford research team
+to develop a commercial version of the prototype chip.
+Their first product was the R2000 microprocessor, introduced in 1985,
+and followed in 1987 by the R2010 floating-point coprocessor.
+Both chips were successfully used in several of the early <i>workstations</i>.
+The next MIPS processor, called R3000, was a variant of the R2000
+with the same instruction set, but optimized for low-cost embedded systems.
+This processor and its system-on-a-chip implementations are still popular
+and used in millions of devices (e.g. printers) even today.
+Since then, several improved variants of the original instruction set
+have been introduced:
+
+<ul>
+<li>MIPS-I: the original 32-bit instruction set; still common.
+<li>MIPS-II: improved instruction set with dozens of new instructions.
+             <!-- Originally used for the unsucessful R6000 processor,
+             but also implemented by many current MIPS processors. -->
+<li>MIPS-III: a 64-bit instruction set used by the R4000 series.
+<li>MIPS-IV: an upgrade of the MIPS III.
+</ul>
+<p>
+
+
+
+One of the key features of the MIPS architecture is the 
+<i>regular register set</i>.
+It consists of the 32-bit wide program counter (PC),
+and a bank of 32 general-purpose registers called r0..r31,
+each of which is 32-bit wide.
+All general-purpose registers can be used as the target registers 
+and data sources for all logical, arithmetical, memory access, 
+and control-flow instructions.
+Only r0 is special because it is internally hardwired to zero.
+Reading r0 always returns the value 0x00000000, and a value written
+to r0 is ignored and lost.
+<p>
+
+Note that the MIPS architecture has no separate status register.
+Instead, the conditional jump instructions test the contents of
+the general-purpose registers, 
+and error conditions are handled by the interrupt/trap mechanism.
+Two separate 32-bit registers called HI and LO are provided 
+for the integer multiplication and division instructions.
+<p>
+
+
+
+
+
+
+
+<h4>MIPS-I memory model and MMU</h4>
+
+The original MIPS architecture defines <i>three data-types</i>:
+32-bit word, 16-bit halfword, and 8-bit bytes.
+The later variants add the 64-bit double-word and floating-point data-types.
+All machine instructions are encoded as 32-bit words,
+and most integer operations are performed on 32-bit integers.
+The analysis of typical processor workloads indicated
+that byte load and store operations were used frequently,
+which led the MIPS designers to organize the main memory
+as a single flat array of bytes.
+Using 32-bit addresses, this results in a maximum main memory of 
+4 Gigabytes.
+<p>
+
+However, based on the external 32-bit data bus, all data transfers
+between memory and processor always use a full word, or 32-bits.
+Extra logic in the processor and the memory is used to enable
+and to extract the corresponding subset of the data when executing 
+the half-word and byte load and store instructions.
+All memory accesses have to be <i>aligned</i> for the corresponding
+data-type: even addresses for half-word accesses, 
+and multiples-of-four for word accesses and instruction fetch.
+Misaligned memory accesses are detected by the processor and
+the program is terminated.
+<p>
+
+
+
+
+Next to the 32-bit data bus and address-bus, the MIPS processors
+also generate four byte-enable signals during each memory access,
+where a low level ('0') indicates that the corresponding group 
+of 8-bits is active during the transfer.
+The MipsMemory simulation component in Hades implements this behaviour,
+and also includes a simple MIPS disassembler to better visualize the
+execution of MIPS programs.
+<p>
+
+
+One rather unusual feature of the MIPS architecture is the support
+of both the <i>big-endian and little-endian</i> memory models.
+That is, the ordering of bytes inside a four-byte word can be selected
+by configuring the bus-interface of the processor.
+While the TinyMips processor can be switched to use either 
+the little-endian or big-endian memory model,
+this feature has not been thoroughly tested.
+Only the little-endian variant is used for the example applets,
+because this is the default generated by our gcc cross-compiler.
+<p>
+
+
+To better support multitasking and multithreaded applications,
+all MIPS processors use a memory management unit (MMU) 
+to map virtual program addresses to actual physical hardware addresses.
+The same mapping is used for instruction fetch and the load/store 
+memory accesses.
+The R2000 processor and the later high-performance processors
+rely on a fully-featured MMU,
+which is programmed via coprocessor 0 instructions.
+The low-end processors like the R3000 rely on a much simpler scheme
+with the following static mapping from virtual to physical addresses:
+<p>
+
+<table border="1">
+ <tr>
+  <td>virtual address range &nbsp;</td>
+  <td>physical address range (static MMU) &nbsp;</td>
+  <td>name &nbsp;</td>
+  <td>description</td>
+ </tr>
+ 
+ <tr>
+  <td><tt>0xc000.0000&nbsp;- 0xffff.ffff</tt></td>
+  <td><tt>0x0000.0000 - 0x7fff.ffff</tt></td>
+  <td><b>kseg2</b></td>
+  <td>1024&nbsp;MBytes mapped cached kernel segment
+ </tr>
+
+ <tr>
+  <td><tt>0xa000.0000 - 0xbfff.ffff</tt></td>
+  <td><tt>0x0000.0000 - 0x1fff.ffff</tt></td>
+  <td><b>kseg1</b></td>
+  <td>512&nbsp;MBytes unmapped uncached kernel segment.
+      The default reset address is 0xbfc0.0000, 
+      which is mapped to physical address 0x1fc0.0000.
+ </tr>
+
+ <tr>
+  <td><tt>0x8000.0000 - 0x9fff.ffff</tt></td>
+  <td><tt>0x0000.0000 - 0x1fff.ffff</tt></td>
+  <td><b>kseg0</b></td>
+  <td>512&nbsp;MBytes unmapped cached kernel segment.
+ </tr>
+
+ <tr>
+  <td><tt>0x0000.0000 - 0x7fff.ffff</tt></td>
+  <td><tt>0x4000.0000 - 0xbfff.ffff</tt></td>
+  <td><b>kuseg</b></td>
+  <td>2048&nbsp;MBytes user space, mapped and cached.
+ </tr>
+</table>
+<p>
+
+
+Programs running in user mode can only access memory addresses
+in the "user space" segment, while memory accesses in either of
+the kernel segments are only allowed for programs in supervisor mode.
+This in turn is decided by a status bit in the system coprocessor&nbsp;0.
+However, typical embedded systems often don't require multi-user support,
+and the software could run in privileged mode all the time.
+<p>
+
+
+While the static mapping explained above is rather simple,
+no virtual address remains unchanged by the mapping.
+This adds another layer of complexity when trying to keep track of memory
+accesses during a simulation, because the software operates with virtual
+addresses, while the physical addresses appear on the address bus
+and are used to control the external memories and peripheral devices.
+Therefore, the TinyMips processor can also be used with the
+<i>memory management switched off</i>,
+so that virtual and physical addresses are the same.
+This mode helps understanding the software running on the simulated processor,
+and is used in all of the introductory applets.
+<p>
+
+
+
+<h4>MIPS-I instruction set</h4>
+
+The MIPS instruction set can be divided into three main groups
+of instructions, each of which has its own distinctive encoding:
+<p>
+
+
+<pre>  
+  I-Type (immediate)
+  | 31  26 | 25  21 | 20  16 | 15                      0 |
+  | opcode | rs     | rt     | offset                    |
+
+  J-Type (jump)
+  | 31  26 | 25                                        0 |
+  | opcode | instr_index                                 |
+
+  R-Type (register)
+  | 31  26 | 25  21 | 20  16 | 15  11 | 10  6 | 5      0 |
+  | opcode | rs     | rt     | rd     | sa    | function |
+</pre>
+<p>
+
+Here, the <i>opcode</i> field indicates the 6-bit main opcode,
+while the 5-bit fields <i>rt</i>, <i>rs</i> and <i>rd</i> 
+select the target register and one or two source registers for
+the instruction:
+<p>
+
+<ul>
+<li>The I-type or <i>immediate</i> instructions hold a 16-bit field;
+    depending on the instruction this is interpreted as an unsigned
+    integer in the range 0..65535 or a sign-extended integer in the
+    range -32768..32767.
+<li>The J-type or <i>jump</i> instructions reserve a 26-bit offset.
+    This can be used as a sign-extended offset for PC-relative branches,
+    or the lowest 5 bits are used to select one of the general-purpose
+    registers.
+<li>The R-type or <i>register</i> instruction group includes all
+    common arithmetical and logical operations, but also the
+    load- and store instructions.
+    The <i>function</i> field acts as a 6-bit sub-opcode that 
+    selects the operation, while the <i>sa</i> field encodes the 
+    shift-amount used for the shift-operations.
+</ul>
+<p>
+
+
+Please refer to the datasheets or the literature 
+for a complete listing and explanation of all instructions.
+You can also look at the source code of the 
+<a href="MIPS32.java">MIPS32 interpreter</a>,
+which defines all opcodes and contains the actual implementation
+of each instruction.
+
+
+
+
+
+
+<h4>MIPS-I interrupts</h4>
+
+TO BE WRITTEN...<p>
+
+<h4>The MIPS coprocessor concept</h4>
+
+TO BE WRITTEN...<p>
+
+<h4>Register convention</h4>
+
+As explained above, the MIPS hardware does not enforce a specific
+use for the general-purpose registers (except for r0).
+However, the following register convention has evolved as a 
+standard for MIPS programming and is
+is used by most tools, compilers, and operating systems:
+<p>
+<table border="1">
+ <tr>
+  <td><i>Register number &nbsp;</i><td>
+  <td><i>Name &nbsp; </i></td> 
+  <td><i>Description</i></td>
+ </tr>
+ <tr>
+  <td>0<td>
+  <td><b>zero</b></td> 
+  <td>Always returns 0</td>
+ </tr>
+ <tr>
+  <td>1<td>
+  <td><b>at</b></td> 
+  <td>(assembler temporary) Reserved for use by assembler</td>
+ </tr>
+ <tr>
+  <td>2-3<td>
+  <td><b>v0 v1</b></td> 
+  <td>Value returned by subroutine</td>
+ </tr>
+ <tr>
+  <td>4-7<td>
+  <td><b>a0-a3</b></td> 
+  <td>(arguments) First four parameters for a subroutine</td>
+ </tr>
+ <tr>
+  <td>8-15<td>
+  <td><b>t0-t7</b></td> 
+  <td>(temporaries) Subroutines can use without saving</td>
+ </tr>
+ <tr>
+  <td>24-25<td>
+  <td><b>t8-t9</b></td> 
+  <td>(temporaries) Subroutines can use without saving</td>
+ </tr>
+ <tr>
+  <td>16-23<td>
+  <td><b>s0-s7</b></td> 
+  <td>Subroutine register variables, must be restored before returning</td>
+ </tr>
+ <tr>
+  <td>26-27<td>
+  <td><b>k0,k1</b></td> 
+  <td>Reserved for use by interrupt/trap handler; 
+      may change under your feet</td>
+ </tr>
+ <tr>
+  <td>28<td>
+  <td><b>gp</b></td> 
+  <td>Global pointer; used to access "static" or "extern" variables</td>
+ </tr>
+ <tr>
+  <td>29<td>
+  <td><b>sp</b></td> 
+  <td>Stack pointer</td>
+ </tr>
+ <tr>
+  <td>30<td>
+  <td><b>s8/fp</b></td> 
+  <td>Frame pointer or ninth subroutine variable</td>
+ </tr>
+ <tr>
+  <td>31<td>
+  <td><b>ra</b></td> 
+  <td>Return address for subroutine</td>
+ </tr>
+</table>
+
+These register names are also typically used by disassemblers
+and debuggers instead of the raw register numbers.
+When a subroutine wants to use the registers s0-s8 for its intermediate
+results, it must save the values on the stack and restore those values
+before returning. 
+
+
+
+
+<hr>
+<h4>TinyMips overview</h4>
+
+While pipelined execution is the focus of the original RISC concept,
+it is also possible to design a slower non-pipelined implementation 
+of the MIPS-I architecture and instruction set.
+Similar to the well-known 
+<a href="http://www.cs.wisc.edu/~larus/spim.html">SPIM</a> simulator,
+the TinyMips microprocessor in Hades implements such a simplified version
+of the MIPS architecture.
+Unlike SPIM, Hades allows you to change the system environment 
+for the TinyMips and to add and simulate peripherial devices
+with exact timing.
+<p>
+
+
+Conceptually, all instructions execute on TinyMips in one cycle.
+Of course, designing this processor as real hardware would require
+a (rather inefficient) multicycle implementation.
+On the other hand, the simulation model of a non-pipelined processor
+is straightforward and much less complex than a pipelined processor.
+As a result of this, the simulation (unlike the real hardware)
+runs much faster, and is well suited to demonstrate the 
+software development for embedded systems.
+Note that Hades also includes a simulation model of the IDT R3051 processor,
+which models the full instruction pipeline and on-chip caches.
+<p>
+
+
+To keep the TinyMips model as simple and regular as possible,
+it is based on the original MIPS-I 32-bit instruction set.
+If one of the MIPS-II, -III or -IV instructions is detected at runtime, 
+the simulator will print a warning and enter the exception handler.
+<p>
+
+
+The system interface of the TinyMips processor consists of the following:
+<p>
+<ul>
+ <li><b>nRESET</b>: low-active reset input.
+ <li><b>CLK</b>:  clock input, the next instruction is executed 
+                  after a rising-edge.
+ <li><b>DATA</b>: 32-bit bidirectional data bus.
+ <li><b>ADDR</b>: 32-bit address bus.
+ <li><b>NBEN</b>: 4 low-active byte-enable signals 
+                  for halfword- and byte-transfers.
+ <li><b>nWR</b>:  low-active write-enable output.
+ <li><b>nRD</b>:  low-active read-enable output.
+ <li><b>ALE</b>:  address-latch enable output, indicates a valid address.
+</ul>
+<p>
+
+
+So far, the user-interface of the processor is rather plain.
+It consists of a single memory editor that allows to watch and edit
+the contents of the on-chip registers.
+<p>
+<ul>
+ <li>the general-purpose registers are mapped to addresses 0..31.
+     Usually, r29 is used as the stack pointer, r30 as the frame pointer,
+     and r31 as the subroutine return address.
+ <li>the program counter is shown at address 32.
+ <li>the HI multiplication register is shown at address 34.
+ <li>the LO multiplication register is shown at address 35.
+ <li>the MODE register is shown at address 39.
+ <li>the other addresses are unused and show as XXXX.XXXX.
+</ul>
+<p>
+
+
+The bits in the MODE register control the behaviour of the simulation model.
+You can change the values at runtime by typing a new value into the
+memory editor. 
+When you save the Hades design file with a TinyMips processor instance,
+the current value of the MODE register is saved, and restored when you
+load the design file.
+Currently, the following bits are implemented:
+<p>
+<ul>
+ <li>bit 4: 0=no MMU 1=use R3000-style static memory mapping
+ <li>bit 2: 0=debugging off 1=trace memory accesses
+ <li>bit 1: 0=debugging off 1=trace instruction execution
+</ul>
+<p>
+
+
+After a processor reset, the TinyMips uses the MIPS default
+virtual address of 0xbfc0.0000 to fetch the first instruction,
+which translates to physical address 0x1fc0.0000 after conversion
+by the MMU.
+However, the <i>reset address</i> can also be specified explictly
+instead of relying on the default value given above.
+This allows simplifying the demos and avoids an extra memory component
+at the (rather odd) address range starting with 0x1fc0.0000.
+Most of the applets demos disable the MMU and the programs
+are compiled to start at processor address 0x0000.0000.
+Note that the start address of a program can easily be specified
+via the <tt>-T</tt> flags when the GNU linker/loader is used.
+<p>
+
+
+
+
+
+<hr>
+<h4>Gnu binutils and gcc toolchain</h4>
+
+The focus of the TinyMips demonstration applets on the Hades website
+is system-simulation and hardware-software cosimulation.
+While software for small 8-bit microcontrollers is still commonly
+written in assembly, high-level languages are a prerequisite to develop 
+the often very large system and application software programs used
+on 32-bit microprocessor systems.
+We chose the popular 
+<a href="http://www.gnu.org">GNU</a> toolchain for the software development,
+because the corresponding tools support the MIPS architecture,
+are free, open-source, and can be built on a variety of platforms.
+The gcc compiler also generates very efficient code.
+<p>
+
+All software used in the applets was compiled for the MIPS
+via a cross-compiler running on a Linux host (our Hades development
+platform).
+You can easily download and build the required tools on your own
+system.
+First, visit the
+<a href="http://sources.redhat.com/binutils/">binutils project homepage</a>
+and download the sourcecode.
+Naturally, you might already have a precompiled version on your system,
+but you will need to build the cross-toolchain that runs on your 
+computer but generates code for the (Tiny) MIPS architecture.
+Once you have built the tools, you can already use the GNU assembler
+to write assembly code programs for the TinyMips.
+<p>
+
+Afterwards, visit one of the download servers of the GNU project,
+<a href="gcc.gnu.org/">http://gcc.gnu.org/mirrors.html</a>,
+and download a release (stable) version of the GCC compiler.
+Again, follow the instructions to build a cross-compiler that runs
+on your own system but generates MIPS output.
+<p>
+
+If you are running Linux, you also try to download the following
+<a href="http://tams-www.informatik.uni-hamburg.de/applets/hades/archive/gcc-2.7.2.3-mips.tgz">gcc-mips.tgz</a>
+archive in tar.gz format;
+it includes gcc 2.7.2.3 and corresponding binutils ready for
+Linux/x86 (Pentium,Athlon) hosts.
+Note that the tools expect to be installed into a directory called
+<tt>/opt/mips</tt>. 
+This path is configured into the tools; you will have to build the 
+tools yourself and supply the corresponding -prefix option
+to change the base directory.
+<p>
+
+The gnu tools and website provide instructions about how to build
+the cross-compiler and binutils from the sources.
+Depending on your system,
+you might also need additional tools (e.g. flex)
+to build the binutils or the gcc compiler.
+If necessary, download, build, and install such tools before
+and then repeat the binutils and gcc installation.
+For example, we used the following steps to build the tools:
+<p>
+<pre>
+  mkdir /opt/mips/sources
+  cd /opt/mips/sources
+  tar -xzvf /tmp/binutils-2.9.1.0.25.tar.gz 
+  cd binutils-2.9.1.0.25
+  ./configure --target=mips-idt-elf --prefix=/opt/mips
+  make
+  make install
+</pre>
+
+Next, it might be necessary to create a few header files 
+required for the compiler. 
+On Linux systems, it is often possible to just copy the native
+headers files and reuse them for the crosscompiler.
+However, you might also want to edit the files to exactly 
+match your target system:
+<p>
+<pre>
+  mkdir /opt/mips/mips-idt-elf/include
+  cd /opt/mips/mips-idt-elf/include
+  mkdir bits  
+  mkdir sys
+  mkdir gnu
+  cp /usr/include/stdio.h .
+  cp /usr/include/bits/types.h bits/
+  cp /usr/include/bits/stdio_lim.h bits/
+  cp /usr/include/libio.h .
+  cp /usr/include/features.h .
+  cp /usr/include/_G_config.h .
+  cp /usr/include/bits/stdio.h bits/
+  cp /usr/include/sys/cdefs.h sys/
+  cp /usr/include/gnu/stubs.h gnu/
+</pre>
+
+Finally, you can unpack, configure, and build gcc as a cross-compiler.
+We want a compiler that generates MIPS code for the R-3000 series
+and use the ELF binary-code format:
+<p>
+
+<pre>
+  mkdir /opt/mips/mips-idt-elf/include
+  ...
+  cd /opt/mips/sources
+  tar -xzvf /tmp/gcc-2.7.2.3.tar.gz
+  cd gcc-2.7.2.3
+  ./configure --target=mips-idt-elf --with-gnu-as --with-gnu-ld \
+  --prefix=/opt/mips
+  make LANGUAGES=c
+  make LANGUAGES=c install
+</pre>
+<p>
+
+Building the compiler might take a while. The tools are finally 
+installed in the /opt/mips/bin/ directory and can be run from there.
+<p>
+
+TO BE WRITTEN:
+Running the Hades disassembler
+Setting the memory regions
+Debugging tips
+<p>
+
+
+
+<hr>
+<h4>TinyMips Applet Demos</h4>
+
+Please click the following link(s) to go back to the live applet
+demonstrations based on the TinyMips processor:
+
+<ul>
+ <li><a href="76-mips/01-intro/chapter.html">TinyMips applets overview</a>
+     <p>
+ 
+ <li><a href="76-mips/10-sieve/sieve-tiny.html">Sieve of Erathostenes</a>
+ <li><a href="76-mips/12-stack/stack.html">recursive functions</a>
+ <li><a href="76-mips/14-mult/mult.html">mult/div instructions</a>
+ <li><a href="76-mips/15-lbsb/lbsb.html">string operations</a>
+     <p>
+
+ <li><a href="76-mips/16-led/led.html">multiplexed LED display</a>
+ <li><a href="76-mips/17-lcd/lcd.html">graphical LCD display</a>
+ <li><a href="76-mips/18-uart/uart.html">UART and terminal</a>
+ <li><a href="76-mips/19-uart/polling.html">UART polling demo</a>
+ <li><a href="76-mips/20-interrupt/interrupt.html">interrupt demo</a>
+</ul>
+<p>
+
+
+<h4>References and external links</h4>
+
+
+<ul>
+ <li><a href="http://www.mips.com">MIPS corporation homepage</a>
+ <li><a href="http://www.idt.com/">IDT corporation</a> - 
+     <a href="http://www.idt.com/?genID=79R3041">R3041
+     processor documentation and datasheets</a>
+ <li><a href="http://www.cs.wisc.edu/~larus/spim.html">SPIM</a> simulator
+     <p>
+ <li><em>Computer Organization and Design</em> by
+     David Patterson and John L. Hennessy 
+     (Morgan Kaufman ISBN: 1558604286)
+ <li><em>See MIPS run</em> by Dominic Sweetman 
+     (Morgan Kaufman, ISBN: 1558604103).
+</ul>
+<p>
+
+
+
+
+<p>
+</td
+><td class="sText"></td
+><td class="rText"></td
+></tr
+><tr><td class="lEmpty"></td
+><td class="sEmpty"></td
+><td class="mEmpty"></td
+><td class="sEmpty"></td
+><td class="rEmpty"></td
+></tr
+><tr valign="top"><td class="lFoot"><small><a href="http://tams-www.informatik.uni-hamburg.de/applets/hades/webdemos/impressum.html">Impressum</a
+></small></td
+><td class="sFoot"></td
+><td class="mFoot"><small> http://tams-www.informatik.uni-hamburg.de/applets/hades/webdemos/mips.html</small> </td
+><td class="sFoot"></td
+><td class="rFoot"></td
+></tr
+></table
+></body></html>
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=favicon.bmp
+Content-Type: image/bmp; name=favicon.bmp
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/images/favicon.ico
+Content-Transfer-Encoding: Base64
+
+Qk0WAgAAAAAAABYBAAAoAAAAEAAAABAAAAABAAgAAAAAAAABAABtCwAAbQsAADgA
+AAA4AAAAjQMDAMmFhQDu2NgAzIyMAKM0NAC8bGwA/v39AI0EBADx398AyYaGAKAu
+LgDPk5MAnyoqANutrQDFgIAAzI2NAKM1NQD68/MAr09PAOvT0wDLiYkAojExAP36
++gDVoaEAyIODAMR9fQCPCAgA8+PjAKEuLgC0WVkA4by8ANSengDv2dkAsVNTAMR+
+fgCPCQkAojMzANGYmACuTU0AtFpaAPz4+ADHgYEAzY6OALdhYQCdJSUAw3t7AP//
+/wCOBgYAlBMTANyvrwCLAAAAzY+PAPv19QDy4uIAwnh4AP78/AAuLi4uLi4uLi4u
+Li4uLi4uLi4uNSUbLi4uLi4uLi4uLi4uLg4yFy4uLi4uNzMxLi4uLi4YMhcuLi4u
+LggyEC4uLi4uCTIDLi4uLi4RMgQuLi4uLioyFC4uLi4uFjIVLi4uLi4fMgEuLi4u
+LgYyCi4uLiEvMjIwHBIrIgsNMgwuLi4nHg8yGTcWNAggAjIsLi4uLi4YMjYuLi4u
+Li4yMC4uLi4uKTInLi4uLi4uMhouLi4uLi0yJi4uLi4uKDIALi4uLi4dIwUuLi4u
+LhMHJC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4u
+Li4uLi4u
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=hades.css
+Content-Type: text/css; name=hades.css
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/hades.css
+Content-Transfer-Encoding: 8bit
+
+/* hades.css fnh 
+ * 30.06.05 - update with selfhtml tricks (e.g. nowrap)
+   17.05.05 - first version
+*/
+
+
+  /* general */
+  body      {  margin: 0px; color: #000000; background: #ffffff; }
+
+  :link     {  text-decoration: none; color: #000094; }
+  /* :active   {  text-decoration: none; color: #0000ff; } */
+  :visited  {  text-decoration: none; color: #000094; }
+  img       {  border: none; }
+
+  /* we also have: none/hidden/dotted/dashed/solid/double/groove/ridge */
+  img.blueborder { border: solid; border-width: 1px; border-color: #000094; }
+
+  a:link   { text-decoration: none; color: #000094; }
+  a:active { text-decoration: underline; color: #af0000; }
+  a:hover  { text-decoration: underline; color: #af0000; }
+  XXa:visited { text-decoration: none; color: #0000aa; }
+
+  /* use with: <a class="menulink" href="hugo.html"> ... </a>  */
+  a:link.menulink    { color: #0000cc; text-decoration: none;      }
+  a:visited.menulink { color: #9900cc; text-decoration: none;      }
+  a:hover.menulink   { color: #990000; text-decoration: underline; }
+
+
+
+  /* table elements, l=left, s=spacer, m=main, r=right */
+  table         {  
+                   border-spacing: 0px;
+                   border: 0px; padding: 0px; }
+                 /* cell-padding: existiert nicht */
+                 /* cell-spacing: 0px; existiert nicht */
+
+  td            {  vertical-align:  top;  }
+
+  td.lBanner    { text-align:     center;
+                  width:          150px;
+                  background:     #ffffff; }
+  td.sBanner    { width:          6px;
+                  background:     #ffffff; }
+  td.mBanner    { width:          700px;
+                  background:     #ffffff; }
+  td.rBanner    { width:          30px;
+                  background:     #ffffff; }
+
+
+  td.lEmpty     { text-align:     right; 
+                  width:          150px;
+                  height:         8px;
+                  background:     #ffffff; }
+  td.sEmpty     { width:          6px;
+                  height:         8px;
+                  background:     #ffffff; }
+  td.mEmpty     { width:          700px;
+                  height:         8px;
+                  background:     #ffffff; }
+  td.rEmpty     { width:          30px;
+                  height:         8px;
+                  background:     #ffffff; }
+
+  td.lNavbar    { text-align:     right; 
+                  width:          150px;
+                  background:     #eeeeee; 
+                }
+  td.sNavbar    { width:          6px;
+                  background:     #eeeeee; }
+  td.mNavbar    { width:          700px;
+                  background:     #eeeeee; }
+  td.rNavbar    { width:          30px;
+                  background:     #eeeeee; }
+
+
+  td.lText      { width:          150px;
+                  text-align:     right;
+                  background:     #eeeeee; }
+  td.lTextBf    { width:          150px;
+                  text-align:     right;
+                  font-weight:    bold;
+                  background:     #eeeeee; }
+
+  td.lMenu      { width:          150px;
+                  text-align:     left;
+                  background:     #eeeeee; 
+                  white-space:    nowrap; /* pre */
+                  font-size:      9pt;
+                  font-family:    arial;
+                  /* font-size:      smaller; */
+                  /* font-size: 10pt; */
+                  /* font-family:  monospace; */
+                }
+
+  td.lMenu2     { width:          150px;
+                  text-align:     left;
+                  background:     #eeeeee; 
+                  white-space:    nowrap; /* pre */
+                  font-size:      9pt;
+                  font-family:    arial;
+                }
+
+  td.lMenu3     { width:          150px;
+                  text-align:     left;
+                  background:     #fafaff; 
+                  white-space:    nowrap; /* pre */
+                  font-size:      9pt;
+                  font-family:    arial;
+                }
+
+  td.lMenu4     { width:          150px;
+                  text-align:     left;
+                  background:     #f3f3f3; 
+                  white-space:    nowrap; /* pre */
+                  font-size:      9pt;
+                  font-family:    arial;
+                }
+
+  td.lMenu5     { width:          150px;
+                  text-align:     left;
+                  background:     #f8f8f8; 
+                  white-space:    nowrap; /* pre */
+                  font-size:      9pt;
+                  font-family:    arial;
+                }
+
+
+  td.sText      { width:          6px;
+                  background:     #ffffff; }
+  td.mText      { width:          700px;  
+                  background:     #ffffff }
+  td.rText      { width:          30px;
+                  background:     #eeeeee; }
+
+
+  td.lFoot      { width:          150px;
+                  text-align:     right;
+                  /*font-size:      smaller;*/
+                  font-size:      8pt;
+                  font-family:    arial;
+                  background:     #f7b618; }
+  td.sFoot      { width:          6px;
+                  background:     #eeeeee; }
+  td.mFoot      { width:          700px;
+                  font-size:      8pt;
+                  font-family:    arial;
+                  /* font-size:      smaller; */
+                  background:     #eeeeee  }
+  td.rFoot      { width:          30px;
+                  background:     #eeeeee; }
+
+  /* misc */
+  .smalltt  {  font-family:  monospace; font-size:  smaller  }
+  hr    {  height:    2px; border-style:  none; background:  #808080  }
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=hades-130x50-lightgray.gif
+Content-Type: image/gif; name=hades-130x50-lightgray.gif
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/images/hades-130x50-lightgray.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODdhggAyAPYAAP///9zc3Ly8vMHBwfPz87q6utDQ0MzMzL+/v+Xl5eLi4uzs
+7Pv7+/7+/v39/bu7u729vcXFxcnJycvLy8TExL6+vsPDw9HR0cDAwN3d3ff399XV
+1eTk5Ofn5+rq6vj4+M3NzdPT0/z8/N/f3+jo6PX19fHx8ebm5s/Pz/T09MjIyOHh
+4cfHx87OztTU1O3t7dnZ2dLS0t7e3u/v79jY2Pn5+evr68bGxtra2u7u7unp6dvb
+2/r6+sLCwvb29tbW1uPj4+Dg4MrKyvLy8tfX1wAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAACwAAAAAggAyAAAH/oAAgoOEhYaHiImKi4yNjo+QkZKTlJWW
+l5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9hAkCDxAHC76+
+HAXJBQPGAAoCAgMXGosj0BErph3KBULNC9wbiyTKD6Y63C3NDNwZix/KAqY23BfN
+Ddwciw7xpjXcLpoBeKCsAyNlFUyJ4DZCoABlHg4mQ2AKnzJ9zR4m+yCxAIZT3Aw2
+g6CsQUcWpzQW0MErAIFBCJQ1UgbiFMlkQ3g9PJDAQQRlDoKKYMCgxAIPJDqc2Jas
+pqkKykTwGsCtqtUCDypMQBFCmbpEHwIcqCAAwg0cDnTsUETghwSy/mV7qDRpqEYG
+FAMgQIPA4kUiD0RaWND7IJoBE5cIGECgsqmBECM4kDAhlZAyA4kCQHhAo0aDBQYK
+3Hhg7xCDrhaANGhgIogEboeCQLUgg5qMZBNiU71BooEDDxugFoiwycHrAhAYWSxQ
+uhCDCR5nFEKR7GshDRQKHKhMCFkyQ0SSGXAwyGLCQjCUcSTEAAiNiJugFziviF+y
+5oOMJ/Nb6ESyG4bwYEEBPTCAiEyEKJCMCoVYJE8hKvE3SnYFULTIQsmEYEgMGR4C
+D3KGUFdAQ4fYVwB7MRVgAwANDHECDK/1gMJLhPyEEAgXbKAACetxkuJHi7DTISEv
+KCNhIUAR/uKBMj4gIuSJg2SgDAoRVABCCAq8QN4hPARxAQgUkFVVBCRwIhwzQSqj
+ISEtlGSakYSAgOAhGswJwHEFkFBDJQ680FUy9GVyJiMpKBMQITcVQBd7B1yEqJuH
+JGCnSilgshyQmtyU2yLgJHPoIIlmQ4gNFoQ2pCAqYUQIASEQlMyWACQaAyIvrCBD
+kwAwYAAKMFRKiA/KyMCJRpsqsqSn6CkDgQwNlLCCBBBkkIMyDA7S5kQKrDZDBipY
+IAQ33G3AjQQ6mPRBBxv0sMwP1ADwYTISZICYCa8hIOomrhabCAMqlFVmfygwVoAA
+FqAwgoENqLSWIDVscMNmWalwgQIvVh2bjIGCNJBBCxhsNjAEEbQQAhA5FcIBtMEM
+XIEKBnAA6ybK6PvJCC6McCQjDAx4sUABSGCBO7iYQEJvAhVt9NFIJ6300kw37fTT
+UEct9dRUV20104EAADs=
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=hades-mips-overview-banner.gif
+Content-Type: image/gif; name=hades-mips-overview-banner.gif
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/images/hades-mips-overview-banner.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODdhvAIyAPYAAP///8zM6D4+qOrq9ru74AAAjElJrd3d8AkJkMTE5HFxv0JC
+qgcHj+7u942NzCUlnTw8p6io2P39/rOz3VVVsgUFjkBAqebm9KKi1ff3+6qq2Vpa
+tQ0Nkre336+v28bG5YiIyQMDjRoamHNzwNXV7A8Pk3x8xEtLrjo6psjI5k1Nr3p6
+w/n5/ISEyBQUlX5+xdHR6uDg8TExopmZ0dnZ7s/P6VxctbGx3OLi8nd3whwcmYKC
+x/X1+o+PzB4emlhYtDY2pC0toOTk809PsLW13m1tvZWVzxgYl9fX7WRkucrK58DA
+40REq6Cg1PHx+YaGyAsLkcLC4yIim1NTsWlpuyAgmlFRsUdHrOjo9WBgt29vvl5e
+tq2t2vv7/aSk1tvb756e076+4mZmujg4pZeX0HV1wSkpnmJiuICAxi8voRYWltPT
+66am1xERlCsrn5OTzvPz+pyc0pGRzYuLy+zs9rm53ycnnmtrvDMzowAAAAAAAAAA
+AAAAAAAAAAAAAAAAACwAAAAAvAIyAAAH/4AAgoOEhYaHiImKi4yNjo+QkZKTlJWW
+l5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXG
+x8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX2
+9/j5+vv8/f7/AAMKHEiwoMGDCBMqXMiQ2o0KCGTcaEixosV+EwpoDHGxo8d2ESow
+KHGiRQxHBBiEgHIFS74wGgtU+EizZjkMHGJWSNAIQswCHfIJicnAptGj3Tz8FMAo
+wM8CEQpJ8AImgpB3cGIieDS16lWkyLpaBVtRwM8aiyjkjPmkUBeiGf/csYjJ4dFb
+jQziFqJB4Osrvn7JGrpbIK9ghiZ+2lAUI4QUKDGzGKoQE4k7wi4gUdZomVBWjUeI
+uPpcIPThyZVPKzzxMwSORAoKPAES04ohETFhvIt5BBJujboJSQgRk4qr4cVVE/pd
+ILjyghIYFHARMwciJ1AQOJkSM4ihL0+StIAX8wok8OIPlYjJ5tV6je2fA0A/Xn7B
+Dxpf0OVx6EkBBQBQoZU+MZ2wiQExBeUKghopaN+DBoEAnAwx9WCIBDoUcAAAGPzE
+AjcskNCFJrVtokJMG7pyokYpfhLiiOS8COFpC2jEwgwx+WBIEwUMIUhGMaGljRYa
+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
+l375l4AZmII5CoEAADsAAAAAAAAAAAA=
+
+------------3CTRaaIaCPnOv7dCmF7lbx
+Content-Disposition: inline; filename=circle-open.png
+Content-Type: image/png; name=circle-open.png
+Content-Location: https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/images/circle-open.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJAQMAAADaX5RTAAAABGdBTUEAALGPC/xh
+BQAAAAZQTFRF7u7uAAAAKG2MiAAAADh0RVh0U29mdHdhcmUAWFYgVmVyc2lvbiAz
+LjEwYSAgUmV2OiAxMi8yOS85NCAoUE5HIHBhdGNoIDEuMindFS5JAAAAGUlEQVR4
+nGNgYGCQYWBQYmBwhCElsAgDAwARjQFA82ew3AAAAAd0SU1FB9UFEQsfCo+4kNcA
+AAAASUVORK5CYII=
+
+------------3CTRaaIaCPnOv7dCmF7lbx--
